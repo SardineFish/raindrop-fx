@@ -13,7 +13,7 @@
   "author": "SardineFish",
   "license": "MIT",
   "dependencies": {
-    "zogra-renderer": "^1.0.0"
+    "zogra-renderer": "file://./zogra-renderer"
   },
   "devDependencies": {
     "esbuild": "^0.8.50",
