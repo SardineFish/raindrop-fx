@@ -1,0 +1,3 @@
+[submodule "zogra-renderer"]
+	path = zogra-renderer
+	url = https://github.com/SardineFish/zogra-renderer.git
