@@ -1,6 +1,8 @@
 # Raindrop FX
 Optimised raindrop effect on glass with WebGL2
 
+Inspired by <https://github.com/codrops/RainEffect>
+
 Check the live demo: <https://lab.sardinefish.com/rain>
 
 ![](./assets/img/demo.png)
@@ -103,15 +105,36 @@ const raindropFx = new RaindropFX({
 ```
 
 
-## Configure
+## Configuration
 
-All configure except canvas element are optional at initialize.
+All options except canvas element are optional at initialize.
 
 ```javascript
 // Minimal startup script with a dark opacity background
 const raindropFx = new RaindropFX({
     canvas: canvas,
 });
+```
+
+All options can be set dynamically by `raindropFx.options.xxx=xx` except renderer size and background image
+Example: 
+```javascript
+// At initialize
+const raindropFx = new RaindropFX({
+    canvas: canvas,
+    spawnSize = [30, 80],
+    spawnInterval = [0.1, 0.2],
+    mistBlurStep: 5,
+    dropletsPerSecond: 1000,
+});
+
+await raindropFx.start();
+
+// Or set directly
+raindropFx.options.spawnSize = [30, 150];
+raindropFx.options.spawnInterval = [0.01, 0.05];
+raindropFx.options.mistBlurStep = 5;
+raindropFx.options.dropletsPerSecond = 1000;
 ```
 
 ### Resize
@@ -138,6 +161,7 @@ await raindropFx.setBackground(anotherCanvas);
 ```
 
 ### Raindrop Simulation Options
+
 ```typescript
 interface SimulationOptions
 {
