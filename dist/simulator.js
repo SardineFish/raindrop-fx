@@ -1,7 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RaindropSimulator = void 0;
+exports.RaindropSimulator = exports.CollisionGrid = void 0;
 const spawner_1 = require("./spawner");
+class CollisionGrid extends Array {
+    /**@deprecated */
+    push(...item) {
+        return super.push(...item);
+    }
+    add(raindrop) {
+        const len = super.push(raindrop);
+        raindrop.gridIdx = len - 1;
+        raindrop.grid = this;
+    }
+    delete(raindrop) {
+        this[raindrop.gridIdx] = this[this.length - 1];
+        this[raindrop.gridIdx].gridIdx = raindrop.gridIdx;
+        this.length--;
+        raindrop.gridIdx = -1;
+        raindrop.grid = undefined;
+    }
+}
+exports.CollisionGrid = CollisionGrid;
 class RaindropSimulator {
     constructor(options) {
         this.raindrops = [];
@@ -20,7 +39,7 @@ class RaindropSimulator {
             this.grid.length = w * h;
         }
         for (let i = base; i < this.grid.length; i++)
-            this.grid[i] = new Set();
+            this.grid[i] = new CollisionGrid();
     }
     gridAt(gridX, gridY) {
         if (gridX < 0 || gridY < 0)
@@ -42,8 +61,10 @@ class RaindropSimulator {
     add(raindrop) {
         this.raindrops.push(raindrop);
         let grid = this.gridAtWorldPos(raindrop.pos.x, raindrop.pos.y);
-        grid?.add(raindrop);
-        raindrop.grid = grid;
+        if (grid) {
+            grid.add(raindrop);
+            raindrop.gridIdx = grid.length - 1;
+        }
     }
     update(time) {
         if (this.raindrops.length <= this.options.spawnLimit) {

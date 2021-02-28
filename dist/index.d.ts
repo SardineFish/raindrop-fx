@@ -1,3 +1,4 @@
+import { TextureData } from "zogra-renderer";
 import { RaindropRenderer, RenderOptions } from "./renderer";
 import { RaindropSimulator, SimulatorOptions } from "./simulator";
 interface Options extends SimulatorOptions, RenderOptions {
@@ -13,6 +14,7 @@ declare class RaindropFX {
     start(): Promise<void>;
     stop(): void;
     resize(width: number, height: number): void;
+    setBackground(background: string | TextureData): Promise<void>;
     private update;
 }
 export = RaindropFX;

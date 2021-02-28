@@ -77,6 +77,10 @@ class RaindropFX {
         this.options.viewport = new zogra_renderer_1.Rect(zogra_renderer_1.vec2.zero(), zogra_renderer_1.vec2(width, height));
         this.renderer.resize();
     }
+    async setBackground(background) {
+        this.renderer.options.background = background;
+        await this.renderer.reloadBackground();
+    }
     update(time) {
         this.simulator.update(time);
         this.renderer.render(this.simulator.raindrops, time);

@@ -1,5 +1,5 @@
 import { vec2 } from "zogra-renderer";
-import { RaindropSimulator } from "./simulator";
+import { CollisionGrid, RaindropSimulator } from "./simulator";
 import { Time } from "./utils";
 export declare class RainDrop {
     pos: vec2;
@@ -8,7 +8,8 @@ export declare class RainDrop {
     spread: vec2;
     destroied: boolean;
     parent?: RainDrop;
-    grid?: Set<RainDrop>;
+    grid?: CollisionGrid;
+    gridIdx?: number;
     private _mass;
     private _size;
     private simulator;

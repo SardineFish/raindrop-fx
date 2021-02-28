@@ -196,6 +196,7 @@ class RaindropRenderer {
         await this.reloadBackground();
     }
     async reloadBackground() {
+        this.originalBackground?.destroy();
         if (typeof (this.options.background) === "string") {
             this.originalBackground = await zogra_renderer_1.TextureImporter
                 .url(this.options.background)

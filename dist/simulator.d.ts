@@ -75,16 +75,22 @@ export interface SimulatorOptions {
      */
     gravity: number;
 }
+export declare class CollisionGrid extends Array<RainDrop> {
+    /**@deprecated */
+    push(...item: RainDrop[]): number;
+    add(raindrop: RainDrop): void;
+    delete(raindrop: RainDrop): void;
+}
 export declare class RaindropSimulator {
     options: SimulatorOptions;
     spawner: Spawner;
     raindrops: RainDrop[];
-    grid: Set<RainDrop>[];
+    grid: CollisionGrid[];
     constructor(options: SimulatorOptions);
     get gridSize(): number;
     resize(): void;
-    gridAt(gridX: number, gridY: number): Set<RainDrop> | undefined;
-    gridAtWorldPos(x: number, y: number): Set<RainDrop> | undefined;
+    gridAt(gridX: number, gridY: number): CollisionGrid | undefined;
+    gridAtWorldPos(x: number, y: number): CollisionGrid | undefined;
     worldToGrid(x: number, y: number): [number, number];
     add(raindrop: RainDrop): void;
     update(time: Time): void;
