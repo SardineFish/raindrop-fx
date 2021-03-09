@@ -184,7 +184,7 @@ interface SimulationOptions
      */
     motionInterval: [number, number],
     /**
-     * Random velociy x relative to velocity y. 
+     * Random velocity x relative to velocity y. 
      * Recommend in range (0..0.1)
      */
     xShifting: [number, number],
