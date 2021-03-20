@@ -1,4 +1,4 @@
-import { Rect, TextureData, vec2 } from "zogra-renderer";
+import { Rect, TextureData, vec2 } from "@sardinefish/zogra-renderer";
 import { RaindropRenderer, RenderOptions } from "./renderer";
 import { RaindropSimulator, SimulatorOptions } from "./simulator";
 import { Time } from "./utils";

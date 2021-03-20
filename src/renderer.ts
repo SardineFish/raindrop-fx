@@ -3,7 +3,7 @@ import
     Blending, Color, DepthTest, mat4, MaterialFromShader, MeshBuilder, quat, RenderBuffer,
     RenderTarget, RenderTexture, Shader, shaderProp, SimpleTexturedMaterial, Texture, Texture2D, TextureData,
     TextureFormat, TextureImporter, Utils, vec2, vec4, WrapMode, ZograRenderer
-} from "zogra-renderer";
+} from "@sardinefish/zogra-renderer";
 import raindropTexture from "../assets/img/raindrop.png";
 import { BlurRenderer } from "./blur";
 import { RainDrop } from "./raindrop";

@@ -1,4 +1,4 @@
-import { minus, Rect, vec2 } from "zogra-renderer";
+import { minus, Rect, vec2 } from "@sardinefish/zogra-renderer";
 import { RainDrop } from "./raindrop";
 import { JitterOption } from "./random";
 import { Spawner } from "./spawner";

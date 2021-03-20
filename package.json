@@ -1,6 +1,6 @@
 {
-  "name": "rain",
-  "version": "1.0.0",
+  "name": "raindrop-fx",
+  "version": "1.0.1",
   "description": "Rain drop effect with WebGL",
   "main": "dist/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "author": "SardineFish",
   "license": "MIT",
   "dependencies": {
-    "zogra-renderer": "file://./zogra-renderer/zogra-renderer"
+    "@sardinefish/zogra-renderer": "^1.2.0"
   },
   "devDependencies": {
     "esbuild": "^0.8.50",
