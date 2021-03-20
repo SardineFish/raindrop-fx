@@ -1,4 +1,4 @@
-import { TextureData, ZograRenderer } from "zogra-renderer";
+import { TextureData, ZograRenderer } from "@sardinefish/zogra-renderer";
 import { RainDrop } from "./raindrop";
 import { Time } from "./utils";
 export interface RenderOptions {

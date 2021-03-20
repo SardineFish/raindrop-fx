@@ -1,4 +1,4 @@
-import { Rect } from "zogra-renderer";
+import { Rect } from "@sardinefish/zogra-renderer";
 import { RainDrop } from "./raindrop";
 import { Spawner } from "./spawner";
 import { Time } from "./utils";

@@ -1,4 +1,4 @@
-import { vec2 } from "zogra-renderer";
+import { vec2 } from "@sardinefish/zogra-renderer";
 import { CollisionGrid, RaindropSimulator } from "./simulator";
 import { Time } from "./utils";
 export declare class RainDrop {

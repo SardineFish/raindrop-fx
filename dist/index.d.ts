@@ -1,4 +1,4 @@
-import { TextureData } from "zogra-renderer";
+import { TextureData } from "@sardinefish/zogra-renderer";
 import { RaindropRenderer, RenderOptions } from "./renderer";
 import { RaindropSimulator, SimulatorOptions } from "./simulator";
 interface Options extends SimulatorOptions, RenderOptions {
