@@ -11,6 +11,36 @@ Background image from <https://www.pixiv.net/artworks/84765992>
 
 ## Usage
 
+### Use as npm package
+
+You might need some bundle tools to run it in browser. eg. `esbuild` or `webpack`
+
+```shell
+$ npm install raindrop-fx
+```
+
+```javascript
+const RaindropFX = require("raindrop-fx");
+
+const canvas = document.querySelector("#canvas");
+const rect = canvas.getBoundingClientRect();
+canvas.width = rect.width;
+canvas.height = rect.height;
+
+const raindropFx = new RaindropFX({
+    canvas: canvas,
+    background: "path/to/background/image",
+});
+
+window.onresize = () =>
+{
+    const rect = canvas.getBoundingClientRect();
+    raindropFx.resize(rect.width, rect.height);
+}
+
+raindropFx.start();
+```
+
 
 ### In Browser
 For directly use in browser, download the pre-bundled script at `/bundle/index.js` 
@@ -71,37 +101,6 @@ window.onresize = () =>
     raindropFx.resize(rect.width, rect.height);
 }
 
-```
-
-### Use as npm package
-This project have not published to npm yet.
-
-Just clone this repo to use it with your project :)
-```shell
-$ git clone https://github.com/SardineFish/raindrop-fx.git
-$ cd raindrop-fx
-$ git submodule update --init --recursive
-```
-
-Update you `package.json` to use a package from local filesystem.
-```json
-{
-    "dependencies": {
-        "raindrop-fx": "file://path/to/raindrop-fx"
-    },
-}
-```
-Then install the package by `npm install`
-
-```javascript
-const RaindropFX = require("./raindrop-fx");
-
-const canvas = document.querySelector("#canvas");
-
-const raindropFx = new RaindropFX({
-    canvas: canvas,
-    background: "url/to/backgroundImage",
-});
 ```
 
 

@@ -1,6 +1,6 @@
 {
   "name": "raindrop-fx",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Rain drop effect with WebGL",
   "main": "dist/index.js",
   "scripts": {
