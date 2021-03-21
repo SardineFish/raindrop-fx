@@ -11,7 +11,7 @@
     "build:ts": "npx tsc",
     "start": "npx esbuild --serve=0.0.0.0:8000 --servedir=./",
     "test": "npm run build && npm run test:examples",
-    "test:examples": "cd examples/with-node && npm test"
+    "test:examples": "cd examples/with-node && npm i && npm test"
   },
   "author": "SardineFish",
   "license": "MIT",
