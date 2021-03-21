@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: '15.x'
           registry-url: 'https://registry.npmjs.org'
+      - run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       - run: npm install
       - run: npm run build
       - run: zip -j raindrop-fx README.md LICENSE bundle/index.js
@@ -33,7 +34,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./raindrop-fx.zip
-          asset_name: raindrop-fx-${{ github.ref }}.zip
+          asset_name: raindrop-fx-${{ env.RELEASE_VERSION }}.zip
           asset_content_type: application/zip
 
   publish:
