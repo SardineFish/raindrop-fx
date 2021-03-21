@@ -11,7 +11,7 @@ Optimised raindrop effect on glass with WebGL2
 
 Inspired by <https://github.com/codrops/RainEffect>
 
-Check the live demo: <https://lab.sardinefish.com/rain>
+Check the live demo: <https://sardinefish.github.io/raindrop-fx/>
 
 ![](./assets/img/demo.png)
 
