@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx esbuild --bundle --outdir=./dist --platform=browser ./src/index.js",
-    "test": "npm run build"
+    "test": "npm run build && npx tsc"
   },
   "author": "SardineFish",
   "license": "MIT",

@@ -9,7 +9,9 @@
     "build:browser": "node ./build-browser.js",
     "build:node": "node ./build-node.js",
     "build:ts": "npx tsc",
-    "start": "npx esbuild --serve=0.0.0.0:8000 --servedir=./"
+    "start": "npx esbuild --serve=0.0.0.0:8000 --servedir=./",
+    "test": "npm run build && npm run test:examples",
+    "test:examples": "cd examples/with-node && npm test"
   },
   "author": "SardineFish",
   "license": "MIT",
