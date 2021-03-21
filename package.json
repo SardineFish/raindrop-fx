@@ -1,6 +1,6 @@
 {
   "name": "raindrop-fx",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Rain drop effect with WebGL",
   "main": "dist/index.js",
   "scripts": {
@@ -13,6 +13,14 @@
     "test": "npm run build && npm run test:examples",
     "test:examples": "cd examples/with-node && npm i && npm test"
   },
+  "keywords": [
+    "webgl",
+    "raindrop",
+    "rain",
+    "visual",
+    "effect",
+    "vfx"
+  ],
   "author": "SardineFish",
   "license": "MIT",
   "dependencies": {
