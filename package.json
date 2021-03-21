@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run build:ts && npm run build:node && npm run build:browser",
-    "build:watch": "node ./build-browser.js --dev -w",
-    "build:browser": "node ./build-browser.js",
-    "build:node": "node ./build-node.js",
+    "build:watch": "node ./build/build-browser.js --dev -w",
+    "build:browser": "node ./build/build-browser.js",
+    "build:node": "node ./build/build-node.js",
     "build:ts": "npx tsc",
     "start": "npx esbuild --serve=0.0.0.0:8000 --servedir=./",
     "test": "npm run build && npm run test:examples",
