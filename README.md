@@ -2,7 +2,7 @@
 [![GitHub](https://img.shields.io/github/license/SardineFish/raindrop-fx)](https://github.com/SardineFish/raindrop-fx/blob/master/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/SardineFish/raindrop-fx/Build%20&%20Test)](https://github.com/SardineFish/raindrop-fx/actions/workflows/build.yml)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/SardineFish/raindrop-fx/Publish%20to%20npm?label=publish)](https://github.com/SardineFish/raindrop-fx/actions/workflows/npm-publish.yml)
-[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/SardineFish/raindrop-fx?label=latest)](https://github.com/SardineFish/raindrop-fx/tags)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/SardineFish/raindrop-fx?label=latest)](https://github.com/SardineFish/raindrop-fx/releases)
 [![npm](https://img.shields.io/npm/v/raindrop-fx)](https://www.npmjs.com/package/raindrop-fx)
 [![GitHub file size in bytes](https://img.shields.io/github/size/SardineFish/raindrop-fx/bundle/index.js?label=bundle%20size)](https://github.com/SardineFish/raindrop-fx/blob/master/bundle/index.js)
 
