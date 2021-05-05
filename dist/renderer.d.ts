@@ -7,6 +7,11 @@ export interface RenderOptions {
     height: number;
     background: TextureData | string;
     /**
+     * Render only raindrops layer on transparent background.
+     * Useful for custom background blending with HTML elements.
+     */
+    raindropLayerOnly: boolean;
+    /**
      * Background blur steps used for background & raindrop refract image.
      * Value should be integer from 0 to log2(backgroundSize).
      * Recommend 3 or 4
