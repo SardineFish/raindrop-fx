@@ -133,6 +133,11 @@ export interface RenderOptions
     height: number;
     background: TextureData | string;
     /**
+     * Render only raindrops layer on transparent background.
+     * Useful for custom background blending with HTML elements.
+     */
+    raindropLayerOnly: boolean;
+    /**
      * Background blur steps used for background & raindrop refract image.
      * Value should be integer from 0 to log2(backgroundSize).
      * Recommend 3 or 4
@@ -349,9 +354,21 @@ export class RaindropRenderer
         this.drawRaindrops(raindrops);
 
         this.renderer.setRenderTarget(RenderTarget.CanvasTarget);
-        this.renderer.clear(Color.black);
+        this.renderer.clear(Color.black.transparent());
 
-        this.drawBackground();
+        if (this.options.raindropLayerOnly)
+        {
+            if (this.options.mist)
+            {
+                this.matrlMistCompose.mistTex = this.mistTexture;
+                this.matrlMistCompose.texture = null;
+                this.matrlMistCompose.mistColor = new Color(...this.options.mistColor);
+                this.matrlMistCompose.mistColor.a = 0.1;
+                this.renderer.blit(this.mistBackground, RenderTarget.CanvasTarget, this.matrlMistCompose);
+            }
+        }
+        else
+            this.drawBackground();
 
         this.matrlCompose.background = this.blurryBackground;
         this.matrlCompose.backgroundSize = vec4(this.options.width, this.options.height, 1 / this.options.width, 1 / this.options.height);

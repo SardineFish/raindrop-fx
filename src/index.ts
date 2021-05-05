@@ -43,6 +43,7 @@ class RaindropFX
             xShifting: [0, 0.1],
 
             // Rendering options
+            raindropLayerOnly: false,
             backgroundBlurSteps: 3,
             mist: true,
             mistColor: [0.01, 0.01, 0.01, 1],
