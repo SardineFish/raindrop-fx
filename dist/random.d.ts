@@ -1,4 +1,4 @@
-import { Rect, vec2 } from "@sardinefish/zogra-renderer";
+import { Rect, vec2 } from "zogra-renderer";
 export interface JitterOption<T extends number | vec2 | [number, number]> {
     base: T;
     jitter: T;

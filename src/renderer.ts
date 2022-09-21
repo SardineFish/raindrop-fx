@@ -440,6 +440,7 @@ export class RaindropRenderer
             this.raindropBuffer[i].modelMatrix.set(model);
             this.raindropBuffer[i].size[0] = raindrop.size.x / 100;
         }
+        this.raindropBuffer.markDirty();
         switch (this.options.raindropCompose)
         {
             case "smoother":
