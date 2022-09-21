@@ -1,4 +1,4 @@
-import { div, mul, plus, vec2, Vector2 } from "@sardinefish/zogra-renderer";
+import { div, mul, plus, vec2, Vector2 } from "zogra-renderer";
 import { random, randomRange } from "./random";
 import { CollisionGrid, RaindropSimulator } from "./simulator";
 import { lerp, Time } from "./utils";

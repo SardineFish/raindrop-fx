@@ -1,4 +1,4 @@
-import { Rect, vec2 } from "@sardinefish/zogra-renderer";
+import { Rect, vec2 } from "zogra-renderer";
 import { RainDrop } from "./raindrop";
 import { randomJittered, JitterOption, randomInRect, randomRange } from "./random";
 import { RaindropSimulator, SimulatorOptions } from "./simulator";
