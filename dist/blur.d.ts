@@ -1,5 +1,5 @@
-import { RenderTexture, Texture, vec4, ZograRenderer } from "@sardinefish/zogra-renderer";
-declare const MaterialBlur_base: typeof import("@sardinefish/zogra-renderer").MaterialType;
+import { RenderTexture, Texture, vec4, ZograRenderer } from "zogra-renderer";
+declare const MaterialBlur_base: new (gl?: WebGL2RenderingContext | undefined) => import("zogra-renderer").Material<import("zogra-renderer").DefaultVertexStruct>;
 declare class MaterialBlur extends MaterialBlur_base {
     texture: Texture | null;
     textureSize: vec4;
