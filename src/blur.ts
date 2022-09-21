@@ -1,4 +1,4 @@
-import { div, FilterMode, MaterialFromShader, mul, RenderTexture, Shader, shaderProp, Texture, Texture2D, TextureResizing, vec2, vec4, WrapMode, ZograRenderer, TextureFormat } from "zogra-renderer";
+import { div, FilterMode, MaterialFromShader, mul, RenderTexture, Shader, shaderProp, Texture, Texture2D, TextureResizing, vec2, vec4, WrapMode, ZograRenderer, TextureFormat } from "@sardinefish/zogra-renderer";
 import vert from "./shader/2d-vert.glsl";
 import frag from "./shader/blur.glsl";
 
