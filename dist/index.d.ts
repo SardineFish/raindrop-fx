@@ -15,6 +15,7 @@ declare class RaindropFX {
     stop(): void;
     resize(width: number, height: number): void;
     setBackground(background: string | TextureData): Promise<void>;
+    destroy(): void;
     private update;
 }
 export = RaindropFX;

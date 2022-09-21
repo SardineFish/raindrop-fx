@@ -108,6 +108,12 @@ class RaindropFX
         this.renderer.options.background = background;
         await this.renderer.reloadBackground();
     }
+
+    destroy()
+    {
+        this.stop();
+        this.renderer.renderer.destroy();
+    }
     
     private update(time: Time)
     {
