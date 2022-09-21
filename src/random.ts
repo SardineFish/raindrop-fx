@@ -1,4 +1,4 @@
-import { distance, mul, Rect, vec2, vec3, Vector2 } from "@sardinefish/zogra-renderer";
+import { distance, mul, Rect, vec2, vec3, Vector2 } from "zogra-renderer";
 
 export interface JitterOption<T extends number | vec2 | [number, number]>
 {

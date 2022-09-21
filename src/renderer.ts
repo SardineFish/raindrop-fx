@@ -1,9 +1,9 @@
 import
 {
     Blending, Color, DepthTest, mat4, MaterialFromShader, MeshBuilder, quat, RenderBuffer,
-    RenderTarget, RenderTexture, Shader, shaderProp, SimpleTexturedMaterial, Texture, Texture2D, TextureData,
-    TextureFormat, TextureImporter, Utils, vec2, vec4, WrapMode, ZograRenderer
-} from "@sardinefish/zogra-renderer";
+    GLArrayBuffer, RenderTexture, Shader, shaderProp, SimpleTexturedMaterial, Texture, Texture2D, TextureData,
+    TextureFormat, TextureImporter, Utils, vec2, vec4, WrapMode, ZograRenderer, FrameBuffer, BufferStructure, DefaultVertexData, Mesh
+} from "zogra-renderer";
 import raindropTexture from "../assets/img/raindrop.png";
 import { BlurRenderer } from "./blur";
 import { RainDrop } from "./raindrop";
@@ -19,6 +19,11 @@ import raindropFrag from "./shader/raindrop-frag.glsl";
 import raindropVert from "./shader/raindrop-vert.glsl";
 import { Time } from "./utils";
 
+
+const RaindropInstanceStruct = BufferStructure({
+    size: "float",
+    modelMatrix: "mat4"
+});
 
 class RaindropMaterial extends MaterialFromShader(new Shader(raindropVert, raindropFrag, {
     blendRGB: [Blending.OneMinusDstColor, Blending.OneMinusSrcColor],
@@ -38,6 +43,7 @@ class RaindropMaterial extends MaterialFromShader(new Shader(raindropVert, raind
 }
 
 class DropletMaterial extends MaterialFromShader(new Shader(dropletVert, dropletFrag, {
+    vertexStructure: DefaultVertexData,
     blendRGB: [Blending.OneMinusDstColor, Blending.OneMinusSrcColor],
     depth: DepthTest.Disable,
     zWrite: false,
@@ -260,11 +266,9 @@ export class RaindropRenderer
     private matrlMistCompose = new MistBackgroundCompose();
 
     private projectionMatrix: mat4;
-    private mesh = MeshBuilder.quad();
-    private raindropBuffer = new RenderBuffer({
-        size: "float",
-        modelMatrix: "mat4",
-    }, 3000);
+    private mesh: Mesh;
+
+    private raindropBuffer = new GLArrayBuffer(RaindropInstanceStruct, 3000);
 
     // deubg: DebugLayerRenderer = new DebugLayerRenderer();
 
@@ -283,6 +287,7 @@ export class RaindropRenderer
         this.mistTexture = new RenderTexture(options.width, options.height, false, TextureFormat.R16F);
 
         this.blurRenderer = new BlurRenderer(this.renderer);
+        this.mesh = MeshBuilder.quad();
 
         this.renderer.setViewProjection(mat4.identity(), this.projectionMatrix);
     }
@@ -348,7 +353,7 @@ export class RaindropRenderer
         this.drawMist(time.dt);
         this.drawRaindrops(raindrops);
 
-        this.renderer.setRenderTarget(RenderTarget.CanvasTarget);
+        this.renderer.setFramebuffer(FrameBuffer.CanvasBuffer);
         this.renderer.clear(Color.black);
 
         this.drawBackground();
@@ -365,7 +370,7 @@ export class RaindropRenderer
         this.matrlCompose.specularParams = vec4(...this.options.raindropSpecularLight, this.options.raindropSpecularShininess);
         this.matrlCompose.bump = this.options.raindropLightBump;
 
-        this.renderer.blit(null, RenderTarget.CanvasTarget, this.matrlCompose);
+        this.renderer.blit(null, FrameBuffer.CanvasBuffer, this.matrlCompose);
     }
 
     private blurBackground()
@@ -410,14 +415,14 @@ export class RaindropRenderer
 
     private drawBackground()
     {
-        this.renderer.blit(this.blurryBackground, RenderTarget.CanvasTarget);
+        this.renderer.blit(this.blurryBackground, FrameBuffer.CanvasBuffer);
 
         if (this.options.mist)
         {
             this.matrlMistCompose.mistTex = this.mistTexture;
             this.matrlMistCompose.texture = this.mistBackground;
             this.matrlMistCompose.mistColor = new Color(...this.options.mistColor);
-            this.renderer.blit(this.mistBackground, RenderTarget.CanvasTarget, this.matrlMistCompose);
+            this.renderer.blit(this.mistBackground, FrameBuffer.CanvasBuffer, this.matrlMistCompose);
         }
 
     }
@@ -426,7 +431,7 @@ export class RaindropRenderer
     {
         if (raindrops.length > this.raindropBuffer.length)
             this.raindropBuffer.resize(this.raindropBuffer.length * 2);
-        this.renderer.setRenderTarget(this.raindropComposeTex);
+        this.renderer.setFramebuffer(this.raindropComposeTex);
         this.renderer.clear(Color.black.transparent());
         for (let i = 0; i < raindrops.length; i++)
         {
@@ -438,18 +443,18 @@ export class RaindropRenderer
         switch (this.options.raindropCompose)
         {
             case "smoother":
-                this.matrlRaindrop.shader.setPipelineStates({
+                this.matrlRaindrop.setPipelineStateOverride({
                     blendRGB: [Blending.OneMinusDstColor, Blending.OneMinusSrcColor]
                 });
-                this.matrlDroplet.shader.setPipelineStates({
+                this.matrlDroplet.setPipelineStateOverride({
                     blendRGB: [Blending.OneMinusDstColor, Blending.OneMinusSrcColor],
                 });
                 break;
             case "harder":
-                this.matrlRaindrop.shader.setPipelineStates({
+                this.matrlRaindrop.setPipelineStateOverride({
                     blendRGB: [Blending.One, Blending.OneMinusSrcAlpha]
                 });
-                this.matrlDroplet.shader.setPipelineStates({
+                this.matrlDroplet.setPipelineStateOverride({
                     blendRGB: [Blending.One, Blending.OneMinusSrcAlpha],
                 });
                 break;
@@ -463,7 +468,7 @@ export class RaindropRenderer
 
     private drawDroplet(time: Time)
     {
-        this.renderer.setRenderTarget(this.dropletTexture);
+        this.renderer.setFramebuffer(this.dropletTexture);
         const count = this.options.dropletsPerSeconds * time.dt;
         this.matrlDroplet.spawnRect = vec4(0, 0, this.options.width, this.options.height);
         this.matrlDroplet.sizeRange = vec2(...this.options.dropletSize);
