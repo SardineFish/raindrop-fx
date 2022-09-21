@@ -24,7 +24,7 @@
   "author": "SardineFish",
   "license": "MIT",
   "dependencies": {
-    "@sardinefish/zogra-renderer": "^1.2.0"
+    "zogra-renderer": "1.3.4"
   },
   "devDependencies": {
     "esbuild": "^0.8.50",
