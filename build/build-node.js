@@ -15,7 +15,24 @@ require("esbuild").build({
     minify: !dev,
     watch: watch,
     sourcemap: true,
-    outdir: "./dist",
-    platform: "browser",
+    outfile: "./dist/index.js",
+    platform: "node",
     format: "cjs",
-})
+});
+require("esbuild").build({
+    entryPoints: [
+        "./src/index.ts"
+    ],
+    bundle: true,
+    loader: {
+        ".png": "binary",
+        ".jpg": "binary",
+        ".glsl": "text",
+    },
+    minify: !dev,
+    watch: watch,
+    sourcemap: true,
+    outfile: "./dist/index.mjs",
+    platform: "node",
+    format: "esm",
+});

@@ -5,29 +5,29 @@ var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __markAsModule = (target) => __defProp(target, "__esModule", {value: true});
-var __commonJS = (callback, module2) => () => {
-  if (!module2) {
-    module2 = {exports: {}};
-    callback(module2.exports, module2);
+var __commonJS = (callback, module) => () => {
+  if (!module) {
+    module = {exports: {}};
+    callback(module.exports, module);
   }
-  return module2.exports;
+  return module.exports;
 };
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, {get: all[name], enumerable: true});
 };
-var __exportStar = (target, module2, desc) => {
-  if (module2 && typeof module2 === "object" || typeof module2 === "function") {
-    for (let key of __getOwnPropNames(module2))
+var __exportStar = (target, module, desc) => {
+  if (module && typeof module === "object" || typeof module === "function") {
+    for (let key of __getOwnPropNames(module))
       if (!__hasOwnProp.call(target, key) && key !== "default")
-        __defProp(target, key, {get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable});
+        __defProp(target, key, {get: () => module[key], enumerable: !(desc = __getOwnPropDesc(module, key)) || desc.enumerable});
   }
   return target;
 };
-var __toModule = (module2) => {
-  if (module2 && module2.__esModule)
-    return module2;
-  return __exportStar(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", {value: module2, enumerable: true})), module2);
+var __toModule = (module) => {
+  if (module && module.__esModule)
+    return module;
+  return __exportStar(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", {value: module, enumerable: true})), module);
 };
 var __decorate = (decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key) : target;
@@ -56,23 +56,23 @@ var __toBinary = true ? (base64) => new Uint8Array(Buffer.from(base64, "base64")
 })();
 
 // node_modules/gl-matrix/cjs/common.js
-var require_common = __commonJS((exports2) => {
+var require_common = __commonJS((exports) => {
   "use strict";
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.setMatrixArrayType = setMatrixArrayType;
-  exports2.toRadian = toRadian;
-  exports2.equals = equals;
-  exports2.RANDOM = exports2.ARRAY_TYPE = exports2.EPSILON = void 0;
+  exports.setMatrixArrayType = setMatrixArrayType;
+  exports.toRadian = toRadian;
+  exports.equals = equals;
+  exports.RANDOM = exports.ARRAY_TYPE = exports.EPSILON = void 0;
   var EPSILON = 1e-6;
-  exports2.EPSILON = EPSILON;
+  exports.EPSILON = EPSILON;
   var ARRAY_TYPE = typeof Float32Array !== "undefined" ? Float32Array : Array;
-  exports2.ARRAY_TYPE = ARRAY_TYPE;
+  exports.ARRAY_TYPE = ARRAY_TYPE;
   var RANDOM = Math.random;
-  exports2.RANDOM = RANDOM;
+  exports.RANDOM = RANDOM;
   function setMatrixArrayType(type) {
-    exports2.ARRAY_TYPE = ARRAY_TYPE = type;
+    exports.ARRAY_TYPE = ARRAY_TYPE = type;
   }
   var degree = Math.PI / 180;
   function toRadian(a2) {
@@ -92,7 +92,7 @@ var require_common = __commonJS((exports2) => {
 });
 
 // node_modules/gl-matrix/cjs/mat2.js
-var require_mat2 = __commonJS((exports2) => {
+var require_mat2 = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -107,34 +107,34 @@ var require_mat2 = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.create = create;
-  exports2.clone = clone;
-  exports2.copy = copy;
-  exports2.identity = identity;
-  exports2.fromValues = fromValues;
-  exports2.set = set;
-  exports2.transpose = transpose;
-  exports2.invert = invert;
-  exports2.adjoint = adjoint;
-  exports2.determinant = determinant;
-  exports2.multiply = multiply;
-  exports2.rotate = rotate;
-  exports2.scale = scale;
-  exports2.fromRotation = fromRotation;
-  exports2.fromScaling = fromScaling;
-  exports2.str = str;
-  exports2.frob = frob;
-  exports2.LDU = LDU;
-  exports2.add = add;
-  exports2.subtract = subtract;
-  exports2.exactEquals = exactEquals;
-  exports2.equals = equals;
-  exports2.multiplyScalar = multiplyScalar;
-  exports2.multiplyScalarAndAdd = multiplyScalarAndAdd;
-  exports2.sub = exports2.mul = void 0;
+  exports.create = create;
+  exports.clone = clone;
+  exports.copy = copy;
+  exports.identity = identity;
+  exports.fromValues = fromValues;
+  exports.set = set;
+  exports.transpose = transpose;
+  exports.invert = invert;
+  exports.adjoint = adjoint;
+  exports.determinant = determinant;
+  exports.multiply = multiply;
+  exports.rotate = rotate;
+  exports.scale = scale;
+  exports.fromRotation = fromRotation;
+  exports.fromScaling = fromScaling;
+  exports.str = str;
+  exports.frob = frob;
+  exports.LDU = LDU;
+  exports.add = add;
+  exports.subtract = subtract;
+  exports.exactEquals = exactEquals;
+  exports.equals = equals;
+  exports.multiplyScalar = multiplyScalar;
+  exports.multiplyScalarAndAdd = multiplyScalarAndAdd;
+  exports.sub = exports.mul = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
   function _getRequireWildcardCache(nodeInterop) {
     if (typeof WeakMap !== "function")
@@ -352,13 +352,13 @@ var require_mat2 = __commonJS((exports2) => {
     return out;
   }
   var mul2 = multiply;
-  exports2.mul = mul2;
+  exports.mul = mul2;
   var sub = subtract;
-  exports2.sub = sub;
+  exports.sub = sub;
 });
 
 // node_modules/gl-matrix/cjs/mat2d.js
-var require_mat2d = __commonJS((exports2) => {
+var require_mat2d = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -373,33 +373,33 @@ var require_mat2d = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.create = create;
-  exports2.clone = clone;
-  exports2.copy = copy;
-  exports2.identity = identity;
-  exports2.fromValues = fromValues;
-  exports2.set = set;
-  exports2.invert = invert;
-  exports2.determinant = determinant;
-  exports2.multiply = multiply;
-  exports2.rotate = rotate;
-  exports2.scale = scale;
-  exports2.translate = translate;
-  exports2.fromRotation = fromRotation;
-  exports2.fromScaling = fromScaling;
-  exports2.fromTranslation = fromTranslation;
-  exports2.str = str;
-  exports2.frob = frob;
-  exports2.add = add;
-  exports2.subtract = subtract;
-  exports2.multiplyScalar = multiplyScalar;
-  exports2.multiplyScalarAndAdd = multiplyScalarAndAdd;
-  exports2.exactEquals = exactEquals;
-  exports2.equals = equals;
-  exports2.sub = exports2.mul = void 0;
+  exports.create = create;
+  exports.clone = clone;
+  exports.copy = copy;
+  exports.identity = identity;
+  exports.fromValues = fromValues;
+  exports.set = set;
+  exports.invert = invert;
+  exports.determinant = determinant;
+  exports.multiply = multiply;
+  exports.rotate = rotate;
+  exports.scale = scale;
+  exports.translate = translate;
+  exports.fromRotation = fromRotation;
+  exports.fromScaling = fromScaling;
+  exports.fromTranslation = fromTranslation;
+  exports.str = str;
+  exports.frob = frob;
+  exports.add = add;
+  exports.subtract = subtract;
+  exports.multiplyScalar = multiplyScalar;
+  exports.multiplyScalarAndAdd = multiplyScalarAndAdd;
+  exports.exactEquals = exactEquals;
+  exports.equals = equals;
+  exports.sub = exports.mul = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
   function _getRequireWildcardCache(nodeInterop) {
     if (typeof WeakMap !== "function")
@@ -641,13 +641,13 @@ var require_mat2d = __commonJS((exports2) => {
     return Math.abs(a0 - b0) <= glMatrix.EPSILON * Math.max(1, Math.abs(a0), Math.abs(b0)) && Math.abs(a1 - b1) <= glMatrix.EPSILON * Math.max(1, Math.abs(a1), Math.abs(b1)) && Math.abs(a22 - b2) <= glMatrix.EPSILON * Math.max(1, Math.abs(a22), Math.abs(b2)) && Math.abs(a3 - b3) <= glMatrix.EPSILON * Math.max(1, Math.abs(a3), Math.abs(b3)) && Math.abs(a4 - b4) <= glMatrix.EPSILON * Math.max(1, Math.abs(a4), Math.abs(b4)) && Math.abs(a5 - b5) <= glMatrix.EPSILON * Math.max(1, Math.abs(a5), Math.abs(b5));
   }
   var mul2 = multiply;
-  exports2.mul = mul2;
+  exports.mul = mul2;
   var sub = subtract;
-  exports2.sub = sub;
+  exports.sub = sub;
 });
 
 // node_modules/gl-matrix/cjs/mat3.js
-var require_mat3 = __commonJS((exports2) => {
+var require_mat3 = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -662,40 +662,40 @@ var require_mat3 = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.create = create;
-  exports2.fromMat4 = fromMat4;
-  exports2.clone = clone;
-  exports2.copy = copy;
-  exports2.fromValues = fromValues;
-  exports2.set = set;
-  exports2.identity = identity;
-  exports2.transpose = transpose;
-  exports2.invert = invert;
-  exports2.adjoint = adjoint;
-  exports2.determinant = determinant;
-  exports2.multiply = multiply;
-  exports2.translate = translate;
-  exports2.rotate = rotate;
-  exports2.scale = scale;
-  exports2.fromTranslation = fromTranslation;
-  exports2.fromRotation = fromRotation;
-  exports2.fromScaling = fromScaling;
-  exports2.fromMat2d = fromMat2d;
-  exports2.fromQuat = fromQuat;
-  exports2.normalFromMat4 = normalFromMat4;
-  exports2.projection = projection;
-  exports2.str = str;
-  exports2.frob = frob;
-  exports2.add = add;
-  exports2.subtract = subtract;
-  exports2.multiplyScalar = multiplyScalar;
-  exports2.multiplyScalarAndAdd = multiplyScalarAndAdd;
-  exports2.exactEquals = exactEquals;
-  exports2.equals = equals;
-  exports2.sub = exports2.mul = void 0;
+  exports.create = create;
+  exports.fromMat4 = fromMat4;
+  exports.clone = clone;
+  exports.copy = copy;
+  exports.fromValues = fromValues;
+  exports.set = set;
+  exports.identity = identity;
+  exports.transpose = transpose;
+  exports.invert = invert;
+  exports.adjoint = adjoint;
+  exports.determinant = determinant;
+  exports.multiply = multiply;
+  exports.translate = translate;
+  exports.rotate = rotate;
+  exports.scale = scale;
+  exports.fromTranslation = fromTranslation;
+  exports.fromRotation = fromRotation;
+  exports.fromScaling = fromScaling;
+  exports.fromMat2d = fromMat2d;
+  exports.fromQuat = fromQuat;
+  exports.normalFromMat4 = normalFromMat4;
+  exports.projection = projection;
+  exports.str = str;
+  exports.frob = frob;
+  exports.add = add;
+  exports.subtract = subtract;
+  exports.multiplyScalar = multiplyScalar;
+  exports.multiplyScalarAndAdd = multiplyScalarAndAdd;
+  exports.exactEquals = exactEquals;
+  exports.equals = equals;
+  exports.sub = exports.mul = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
   function _getRequireWildcardCache(nodeInterop) {
     if (typeof WeakMap !== "function")
@@ -1129,13 +1129,13 @@ var require_mat3 = __commonJS((exports2) => {
     return Math.abs(a0 - b0) <= glMatrix.EPSILON * Math.max(1, Math.abs(a0), Math.abs(b0)) && Math.abs(a1 - b1) <= glMatrix.EPSILON * Math.max(1, Math.abs(a1), Math.abs(b1)) && Math.abs(a22 - b2) <= glMatrix.EPSILON * Math.max(1, Math.abs(a22), Math.abs(b2)) && Math.abs(a3 - b3) <= glMatrix.EPSILON * Math.max(1, Math.abs(a3), Math.abs(b3)) && Math.abs(a4 - b4) <= glMatrix.EPSILON * Math.max(1, Math.abs(a4), Math.abs(b4)) && Math.abs(a5 - b5) <= glMatrix.EPSILON * Math.max(1, Math.abs(a5), Math.abs(b5)) && Math.abs(a6 - b6) <= glMatrix.EPSILON * Math.max(1, Math.abs(a6), Math.abs(b6)) && Math.abs(a7 - b7) <= glMatrix.EPSILON * Math.max(1, Math.abs(a7), Math.abs(b7)) && Math.abs(a8 - b8) <= glMatrix.EPSILON * Math.max(1, Math.abs(a8), Math.abs(b8));
   }
   var mul2 = multiply;
-  exports2.mul = mul2;
+  exports.mul = mul2;
   var sub = subtract;
-  exports2.sub = sub;
+  exports.sub = sub;
 });
 
 // node_modules/gl-matrix/cjs/mat4.js
-var require_mat4 = __commonJS((exports2) => {
+var require_mat4 = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -1150,57 +1150,57 @@ var require_mat4 = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.create = create;
-  exports2.clone = clone;
-  exports2.copy = copy;
-  exports2.fromValues = fromValues;
-  exports2.set = set;
-  exports2.identity = identity;
-  exports2.transpose = transpose;
-  exports2.invert = invert;
-  exports2.adjoint = adjoint;
-  exports2.determinant = determinant;
-  exports2.multiply = multiply;
-  exports2.translate = translate;
-  exports2.scale = scale;
-  exports2.rotate = rotate;
-  exports2.rotateX = rotateX;
-  exports2.rotateY = rotateY;
-  exports2.rotateZ = rotateZ;
-  exports2.fromTranslation = fromTranslation;
-  exports2.fromScaling = fromScaling;
-  exports2.fromRotation = fromRotation;
-  exports2.fromXRotation = fromXRotation;
-  exports2.fromYRotation = fromYRotation;
-  exports2.fromZRotation = fromZRotation;
-  exports2.fromRotationTranslation = fromRotationTranslation;
-  exports2.fromQuat2 = fromQuat2;
-  exports2.getTranslation = getTranslation;
-  exports2.getScaling = getScaling;
-  exports2.getRotation = getRotation;
-  exports2.fromRotationTranslationScale = fromRotationTranslationScale;
-  exports2.fromRotationTranslationScaleOrigin = fromRotationTranslationScaleOrigin;
-  exports2.fromQuat = fromQuat;
-  exports2.frustum = frustum;
-  exports2.perspectiveNO = perspectiveNO;
-  exports2.perspectiveZO = perspectiveZO;
-  exports2.perspectiveFromFieldOfView = perspectiveFromFieldOfView;
-  exports2.orthoNO = orthoNO;
-  exports2.orthoZO = orthoZO;
-  exports2.lookAt = lookAt;
-  exports2.targetTo = targetTo;
-  exports2.str = str;
-  exports2.frob = frob;
-  exports2.add = add;
-  exports2.subtract = subtract;
-  exports2.multiplyScalar = multiplyScalar;
-  exports2.multiplyScalarAndAdd = multiplyScalarAndAdd;
-  exports2.exactEquals = exactEquals;
-  exports2.equals = equals;
-  exports2.sub = exports2.mul = exports2.ortho = exports2.perspective = void 0;
+  exports.create = create;
+  exports.clone = clone;
+  exports.copy = copy;
+  exports.fromValues = fromValues;
+  exports.set = set;
+  exports.identity = identity;
+  exports.transpose = transpose;
+  exports.invert = invert;
+  exports.adjoint = adjoint;
+  exports.determinant = determinant;
+  exports.multiply = multiply;
+  exports.translate = translate;
+  exports.scale = scale;
+  exports.rotate = rotate;
+  exports.rotateX = rotateX;
+  exports.rotateY = rotateY;
+  exports.rotateZ = rotateZ;
+  exports.fromTranslation = fromTranslation;
+  exports.fromScaling = fromScaling;
+  exports.fromRotation = fromRotation;
+  exports.fromXRotation = fromXRotation;
+  exports.fromYRotation = fromYRotation;
+  exports.fromZRotation = fromZRotation;
+  exports.fromRotationTranslation = fromRotationTranslation;
+  exports.fromQuat2 = fromQuat2;
+  exports.getTranslation = getTranslation;
+  exports.getScaling = getScaling;
+  exports.getRotation = getRotation;
+  exports.fromRotationTranslationScale = fromRotationTranslationScale;
+  exports.fromRotationTranslationScaleOrigin = fromRotationTranslationScaleOrigin;
+  exports.fromQuat = fromQuat;
+  exports.frustum = frustum;
+  exports.perspectiveNO = perspectiveNO;
+  exports.perspectiveZO = perspectiveZO;
+  exports.perspectiveFromFieldOfView = perspectiveFromFieldOfView;
+  exports.orthoNO = orthoNO;
+  exports.orthoZO = orthoZO;
+  exports.lookAt = lookAt;
+  exports.targetTo = targetTo;
+  exports.str = str;
+  exports.frob = frob;
+  exports.add = add;
+  exports.subtract = subtract;
+  exports.multiplyScalar = multiplyScalar;
+  exports.multiplyScalarAndAdd = multiplyScalarAndAdd;
+  exports.exactEquals = exactEquals;
+  exports.equals = equals;
+  exports.sub = exports.mul = exports.ortho = exports.perspective = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
   function _getRequireWildcardCache(nodeInterop) {
     if (typeof WeakMap !== "function")
@@ -2139,7 +2139,7 @@ var require_mat4 = __commonJS((exports2) => {
     return out;
   }
   var perspective = perspectiveNO;
-  exports2.perspective = perspective;
+  exports.perspective = perspective;
   function perspectiveZO(out, fovy, aspect, near, far) {
     var f = 1 / Math.tan(fovy / 2), nf;
     out[0] = f / aspect;
@@ -2214,7 +2214,7 @@ var require_mat4 = __commonJS((exports2) => {
     return out;
   }
   var ortho = orthoNO;
-  exports2.ortho = ortho;
+  exports.ortho = ortho;
   function orthoZO(out, left, right, bottom, top, near, far) {
     var lr = 1 / (left - right);
     var bt = 1 / (bottom - top);
@@ -2437,13 +2437,13 @@ var require_mat4 = __commonJS((exports2) => {
     return Math.abs(a0 - b0) <= glMatrix.EPSILON * Math.max(1, Math.abs(a0), Math.abs(b0)) && Math.abs(a1 - b1) <= glMatrix.EPSILON * Math.max(1, Math.abs(a1), Math.abs(b1)) && Math.abs(a22 - b2) <= glMatrix.EPSILON * Math.max(1, Math.abs(a22), Math.abs(b2)) && Math.abs(a3 - b3) <= glMatrix.EPSILON * Math.max(1, Math.abs(a3), Math.abs(b3)) && Math.abs(a4 - b4) <= glMatrix.EPSILON * Math.max(1, Math.abs(a4), Math.abs(b4)) && Math.abs(a5 - b5) <= glMatrix.EPSILON * Math.max(1, Math.abs(a5), Math.abs(b5)) && Math.abs(a6 - b6) <= glMatrix.EPSILON * Math.max(1, Math.abs(a6), Math.abs(b6)) && Math.abs(a7 - b7) <= glMatrix.EPSILON * Math.max(1, Math.abs(a7), Math.abs(b7)) && Math.abs(a8 - b8) <= glMatrix.EPSILON * Math.max(1, Math.abs(a8), Math.abs(b8)) && Math.abs(a9 - b9) <= glMatrix.EPSILON * Math.max(1, Math.abs(a9), Math.abs(b9)) && Math.abs(a10 - b10) <= glMatrix.EPSILON * Math.max(1, Math.abs(a10), Math.abs(b10)) && Math.abs(a11 - b11) <= glMatrix.EPSILON * Math.max(1, Math.abs(a11), Math.abs(b11)) && Math.abs(a12 - b12) <= glMatrix.EPSILON * Math.max(1, Math.abs(a12), Math.abs(b12)) && Math.abs(a13 - b13) <= glMatrix.EPSILON * Math.max(1, Math.abs(a13), Math.abs(b13)) && Math.abs(a14 - b14) <= glMatrix.EPSILON * Math.max(1, Math.abs(a14), Math.abs(b14)) && Math.abs(a15 - b15) <= glMatrix.EPSILON * Math.max(1, Math.abs(a15), Math.abs(b15));
   }
   var mul2 = multiply;
-  exports2.mul = mul2;
+  exports.mul = mul2;
   var sub = subtract;
-  exports2.sub = sub;
+  exports.sub = sub;
 });
 
 // node_modules/gl-matrix/cjs/vec3.js
-var require_vec3 = __commonJS((exports2) => {
+var require_vec3 = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -2458,50 +2458,50 @@ var require_vec3 = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.create = create;
-  exports2.clone = clone;
-  exports2.length = length;
-  exports2.fromValues = fromValues;
-  exports2.copy = copy;
-  exports2.set = set;
-  exports2.add = add;
-  exports2.subtract = subtract;
-  exports2.multiply = multiply;
-  exports2.divide = divide;
-  exports2.ceil = ceil;
-  exports2.floor = floor;
-  exports2.min = min;
-  exports2.max = max;
-  exports2.round = round;
-  exports2.scale = scale;
-  exports2.scaleAndAdd = scaleAndAdd;
-  exports2.distance = distance2;
-  exports2.squaredDistance = squaredDistance;
-  exports2.squaredLength = squaredLength;
-  exports2.negate = negate;
-  exports2.inverse = inverse;
-  exports2.normalize = normalize;
-  exports2.dot = dot;
-  exports2.cross = cross2;
-  exports2.lerp = lerp2;
-  exports2.hermite = hermite;
-  exports2.bezier = bezier;
-  exports2.random = random2;
-  exports2.transformMat4 = transformMat4;
-  exports2.transformMat3 = transformMat3;
-  exports2.transformQuat = transformQuat;
-  exports2.rotateX = rotateX;
-  exports2.rotateY = rotateY;
-  exports2.rotateZ = rotateZ;
-  exports2.angle = angle;
-  exports2.zero = zero;
-  exports2.str = str;
-  exports2.exactEquals = exactEquals;
-  exports2.equals = equals;
-  exports2.forEach = exports2.sqrLen = exports2.len = exports2.sqrDist = exports2.dist = exports2.div = exports2.mul = exports2.sub = void 0;
+  exports.create = create;
+  exports.clone = clone;
+  exports.length = length;
+  exports.fromValues = fromValues;
+  exports.copy = copy;
+  exports.set = set;
+  exports.add = add;
+  exports.subtract = subtract;
+  exports.multiply = multiply;
+  exports.divide = divide;
+  exports.ceil = ceil;
+  exports.floor = floor;
+  exports.min = min;
+  exports.max = max;
+  exports.round = round;
+  exports.scale = scale;
+  exports.scaleAndAdd = scaleAndAdd;
+  exports.distance = distance2;
+  exports.squaredDistance = squaredDistance;
+  exports.squaredLength = squaredLength;
+  exports.negate = negate;
+  exports.inverse = inverse;
+  exports.normalize = normalize;
+  exports.dot = dot;
+  exports.cross = cross2;
+  exports.lerp = lerp2;
+  exports.hermite = hermite;
+  exports.bezier = bezier;
+  exports.random = random2;
+  exports.transformMat4 = transformMat4;
+  exports.transformMat3 = transformMat3;
+  exports.transformQuat = transformQuat;
+  exports.rotateX = rotateX;
+  exports.rotateY = rotateY;
+  exports.rotateZ = rotateZ;
+  exports.angle = angle;
+  exports.zero = zero;
+  exports.str = str;
+  exports.exactEquals = exactEquals;
+  exports.equals = equals;
+  exports.forEach = exports.sqrLen = exports.len = exports.sqrDist = exports.dist = exports.div = exports.mul = exports.sub = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
   function _getRequireWildcardCache(nodeInterop) {
     if (typeof WeakMap !== "function")
@@ -2839,19 +2839,19 @@ var require_vec3 = __commonJS((exports2) => {
     return Math.abs(a0 - b0) <= glMatrix.EPSILON * Math.max(1, Math.abs(a0), Math.abs(b0)) && Math.abs(a1 - b1) <= glMatrix.EPSILON * Math.max(1, Math.abs(a1), Math.abs(b1)) && Math.abs(a22 - b2) <= glMatrix.EPSILON * Math.max(1, Math.abs(a22), Math.abs(b2));
   }
   var sub = subtract;
-  exports2.sub = sub;
+  exports.sub = sub;
   var mul2 = multiply;
-  exports2.mul = mul2;
+  exports.mul = mul2;
   var div2 = divide;
-  exports2.div = div2;
+  exports.div = div2;
   var dist = distance2;
-  exports2.dist = dist;
+  exports.dist = dist;
   var sqrDist = squaredDistance;
-  exports2.sqrDist = sqrDist;
+  exports.sqrDist = sqrDist;
   var len = length;
-  exports2.len = len;
+  exports.len = len;
   var sqrLen = squaredLength;
-  exports2.sqrLen = sqrLen;
+  exports.sqrLen = sqrLen;
   var forEach = function() {
     var vec = create();
     return function(a2, stride, offset, count, fn, arg) {
@@ -2879,11 +2879,11 @@ var require_vec3 = __commonJS((exports2) => {
       return a2;
     };
   }();
-  exports2.forEach = forEach;
+  exports.forEach = forEach;
 });
 
 // node_modules/gl-matrix/cjs/vec4.js
-var require_vec4 = __commonJS((exports2) => {
+var require_vec4 = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -2898,43 +2898,43 @@ var require_vec4 = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.create = create;
-  exports2.clone = clone;
-  exports2.fromValues = fromValues;
-  exports2.copy = copy;
-  exports2.set = set;
-  exports2.add = add;
-  exports2.subtract = subtract;
-  exports2.multiply = multiply;
-  exports2.divide = divide;
-  exports2.ceil = ceil;
-  exports2.floor = floor;
-  exports2.min = min;
-  exports2.max = max;
-  exports2.round = round;
-  exports2.scale = scale;
-  exports2.scaleAndAdd = scaleAndAdd;
-  exports2.distance = distance2;
-  exports2.squaredDistance = squaredDistance;
-  exports2.length = length;
-  exports2.squaredLength = squaredLength;
-  exports2.negate = negate;
-  exports2.inverse = inverse;
-  exports2.normalize = normalize;
-  exports2.dot = dot;
-  exports2.cross = cross2;
-  exports2.lerp = lerp2;
-  exports2.random = random2;
-  exports2.transformMat4 = transformMat4;
-  exports2.transformQuat = transformQuat;
-  exports2.zero = zero;
-  exports2.str = str;
-  exports2.exactEquals = exactEquals;
-  exports2.equals = equals;
-  exports2.forEach = exports2.sqrLen = exports2.len = exports2.sqrDist = exports2.dist = exports2.div = exports2.mul = exports2.sub = void 0;
+  exports.create = create;
+  exports.clone = clone;
+  exports.fromValues = fromValues;
+  exports.copy = copy;
+  exports.set = set;
+  exports.add = add;
+  exports.subtract = subtract;
+  exports.multiply = multiply;
+  exports.divide = divide;
+  exports.ceil = ceil;
+  exports.floor = floor;
+  exports.min = min;
+  exports.max = max;
+  exports.round = round;
+  exports.scale = scale;
+  exports.scaleAndAdd = scaleAndAdd;
+  exports.distance = distance2;
+  exports.squaredDistance = squaredDistance;
+  exports.length = length;
+  exports.squaredLength = squaredLength;
+  exports.negate = negate;
+  exports.inverse = inverse;
+  exports.normalize = normalize;
+  exports.dot = dot;
+  exports.cross = cross2;
+  exports.lerp = lerp2;
+  exports.random = random2;
+  exports.transformMat4 = transformMat4;
+  exports.transformQuat = transformQuat;
+  exports.zero = zero;
+  exports.str = str;
+  exports.exactEquals = exactEquals;
+  exports.equals = equals;
+  exports.forEach = exports.sqrLen = exports.len = exports.sqrDist = exports.dist = exports.div = exports.mul = exports.sub = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
   function _getRequireWildcardCache(nodeInterop) {
     if (typeof WeakMap !== "function")
@@ -3235,19 +3235,19 @@ var require_vec4 = __commonJS((exports2) => {
     return Math.abs(a0 - b0) <= glMatrix.EPSILON * Math.max(1, Math.abs(a0), Math.abs(b0)) && Math.abs(a1 - b1) <= glMatrix.EPSILON * Math.max(1, Math.abs(a1), Math.abs(b1)) && Math.abs(a22 - b2) <= glMatrix.EPSILON * Math.max(1, Math.abs(a22), Math.abs(b2)) && Math.abs(a3 - b3) <= glMatrix.EPSILON * Math.max(1, Math.abs(a3), Math.abs(b3));
   }
   var sub = subtract;
-  exports2.sub = sub;
+  exports.sub = sub;
   var mul2 = multiply;
-  exports2.mul = mul2;
+  exports.mul = mul2;
   var div2 = divide;
-  exports2.div = div2;
+  exports.div = div2;
   var dist = distance2;
-  exports2.dist = dist;
+  exports.dist = dist;
   var sqrDist = squaredDistance;
-  exports2.sqrDist = sqrDist;
+  exports.sqrDist = sqrDist;
   var len = length;
-  exports2.len = len;
+  exports.len = len;
   var sqrLen = squaredLength;
-  exports2.sqrLen = sqrLen;
+  exports.sqrLen = sqrLen;
   var forEach = function() {
     var vec = create();
     return function(a2, stride, offset, count, fn, arg) {
@@ -3277,11 +3277,11 @@ var require_vec4 = __commonJS((exports2) => {
       return a2;
     };
   }();
-  exports2.forEach = forEach;
+  exports.forEach = forEach;
 });
 
 // node_modules/gl-matrix/cjs/quat.js
-var require_quat = __commonJS((exports2) => {
+var require_quat = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -3296,30 +3296,30 @@ var require_quat = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.create = create;
-  exports2.identity = identity;
-  exports2.setAxisAngle = setAxisAngle;
-  exports2.getAxisAngle = getAxisAngle;
-  exports2.getAngle = getAngle;
-  exports2.multiply = multiply;
-  exports2.rotateX = rotateX;
-  exports2.rotateY = rotateY;
-  exports2.rotateZ = rotateZ;
-  exports2.calculateW = calculateW;
-  exports2.exp = exp;
-  exports2.ln = ln;
-  exports2.pow = pow;
-  exports2.slerp = slerp;
-  exports2.random = random2;
-  exports2.invert = invert;
-  exports2.conjugate = conjugate;
-  exports2.fromMat3 = fromMat3;
-  exports2.fromEuler = fromEuler;
-  exports2.str = str;
-  exports2.setAxes = exports2.sqlerp = exports2.rotationTo = exports2.equals = exports2.exactEquals = exports2.normalize = exports2.sqrLen = exports2.squaredLength = exports2.len = exports2.length = exports2.lerp = exports2.dot = exports2.scale = exports2.mul = exports2.add = exports2.set = exports2.copy = exports2.fromValues = exports2.clone = void 0;
+  exports.create = create;
+  exports.identity = identity;
+  exports.setAxisAngle = setAxisAngle;
+  exports.getAxisAngle = getAxisAngle;
+  exports.getAngle = getAngle;
+  exports.multiply = multiply;
+  exports.rotateX = rotateX;
+  exports.rotateY = rotateY;
+  exports.rotateZ = rotateZ;
+  exports.calculateW = calculateW;
+  exports.exp = exp;
+  exports.ln = ln;
+  exports.pow = pow;
+  exports.slerp = slerp;
+  exports.random = random2;
+  exports.invert = invert;
+  exports.conjugate = conjugate;
+  exports.fromMat3 = fromMat3;
+  exports.fromEuler = fromEuler;
+  exports.str = str;
+  exports.setAxes = exports.sqlerp = exports.rotationTo = exports.equals = exports.exactEquals = exports.normalize = exports.sqrLen = exports.squaredLength = exports.len = exports.length = exports.lerp = exports.dot = exports.scale = exports.mul = exports.add = exports.set = exports.copy = exports.fromValues = exports.clone = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
   var mat3 = _interopRequireWildcard(require_mat3());
   var vec33 = _interopRequireWildcard(require_vec3());
@@ -3584,37 +3584,37 @@ var require_quat = __commonJS((exports2) => {
     return "quat(" + a2[0] + ", " + a2[1] + ", " + a2[2] + ", " + a2[3] + ")";
   }
   var clone = vec42.clone;
-  exports2.clone = clone;
+  exports.clone = clone;
   var fromValues = vec42.fromValues;
-  exports2.fromValues = fromValues;
+  exports.fromValues = fromValues;
   var copy = vec42.copy;
-  exports2.copy = copy;
+  exports.copy = copy;
   var set = vec42.set;
-  exports2.set = set;
+  exports.set = set;
   var add = vec42.add;
-  exports2.add = add;
+  exports.add = add;
   var mul2 = multiply;
-  exports2.mul = mul2;
+  exports.mul = mul2;
   var scale = vec42.scale;
-  exports2.scale = scale;
+  exports.scale = scale;
   var dot = vec42.dot;
-  exports2.dot = dot;
+  exports.dot = dot;
   var lerp2 = vec42.lerp;
-  exports2.lerp = lerp2;
+  exports.lerp = lerp2;
   var length = vec42.length;
-  exports2.length = length;
+  exports.length = length;
   var len = length;
-  exports2.len = len;
+  exports.len = len;
   var squaredLength = vec42.squaredLength;
-  exports2.squaredLength = squaredLength;
+  exports.squaredLength = squaredLength;
   var sqrLen = squaredLength;
-  exports2.sqrLen = sqrLen;
+  exports.sqrLen = sqrLen;
   var normalize = vec42.normalize;
-  exports2.normalize = normalize;
+  exports.normalize = normalize;
   var exactEquals = vec42.exactEquals;
-  exports2.exactEquals = exactEquals;
+  exports.exactEquals = exactEquals;
   var equals = vec42.equals;
-  exports2.equals = equals;
+  exports.equals = equals;
   var rotationTo = function() {
     var tmpvec3 = vec33.create();
     var xUnitVec3 = vec33.fromValues(1, 0, 0);
@@ -3644,7 +3644,7 @@ var require_quat = __commonJS((exports2) => {
       }
     };
   }();
-  exports2.rotationTo = rotationTo;
+  exports.rotationTo = rotationTo;
   var sqlerp = function() {
     var temp1 = create();
     var temp2 = create();
@@ -3655,7 +3655,7 @@ var require_quat = __commonJS((exports2) => {
       return out;
     };
   }();
-  exports2.sqlerp = sqlerp;
+  exports.sqlerp = sqlerp;
   var setAxes = function() {
     var matr = mat3.create();
     return function(out, view, right, up) {
@@ -3671,11 +3671,11 @@ var require_quat = __commonJS((exports2) => {
       return normalize(out, fromMat3(out, matr));
     };
   }();
-  exports2.setAxes = setAxes;
+  exports.setAxes = setAxes;
 });
 
 // node_modules/gl-matrix/cjs/quat2.js
-var require_quat2 = __commonJS((exports2) => {
+var require_quat2 = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -3690,41 +3690,41 @@ var require_quat2 = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.create = create;
-  exports2.clone = clone;
-  exports2.fromValues = fromValues;
-  exports2.fromRotationTranslationValues = fromRotationTranslationValues;
-  exports2.fromRotationTranslation = fromRotationTranslation;
-  exports2.fromTranslation = fromTranslation;
-  exports2.fromRotation = fromRotation;
-  exports2.fromMat4 = fromMat4;
-  exports2.copy = copy;
-  exports2.identity = identity;
-  exports2.set = set;
-  exports2.getDual = getDual;
-  exports2.setDual = setDual;
-  exports2.getTranslation = getTranslation;
-  exports2.translate = translate;
-  exports2.rotateX = rotateX;
-  exports2.rotateY = rotateY;
-  exports2.rotateZ = rotateZ;
-  exports2.rotateByQuatAppend = rotateByQuatAppend;
-  exports2.rotateByQuatPrepend = rotateByQuatPrepend;
-  exports2.rotateAroundAxis = rotateAroundAxis;
-  exports2.add = add;
-  exports2.multiply = multiply;
-  exports2.scale = scale;
-  exports2.lerp = lerp2;
-  exports2.invert = invert;
-  exports2.conjugate = conjugate;
-  exports2.normalize = normalize;
-  exports2.str = str;
-  exports2.exactEquals = exactEquals;
-  exports2.equals = equals;
-  exports2.sqrLen = exports2.squaredLength = exports2.len = exports2.length = exports2.dot = exports2.mul = exports2.setReal = exports2.getReal = void 0;
+  exports.create = create;
+  exports.clone = clone;
+  exports.fromValues = fromValues;
+  exports.fromRotationTranslationValues = fromRotationTranslationValues;
+  exports.fromRotationTranslation = fromRotationTranslation;
+  exports.fromTranslation = fromTranslation;
+  exports.fromRotation = fromRotation;
+  exports.fromMat4 = fromMat4;
+  exports.copy = copy;
+  exports.identity = identity;
+  exports.set = set;
+  exports.getDual = getDual;
+  exports.setDual = setDual;
+  exports.getTranslation = getTranslation;
+  exports.translate = translate;
+  exports.rotateX = rotateX;
+  exports.rotateY = rotateY;
+  exports.rotateZ = rotateZ;
+  exports.rotateByQuatAppend = rotateByQuatAppend;
+  exports.rotateByQuatPrepend = rotateByQuatPrepend;
+  exports.rotateAroundAxis = rotateAroundAxis;
+  exports.add = add;
+  exports.multiply = multiply;
+  exports.scale = scale;
+  exports.lerp = lerp2;
+  exports.invert = invert;
+  exports.conjugate = conjugate;
+  exports.normalize = normalize;
+  exports.str = str;
+  exports.exactEquals = exactEquals;
+  exports.equals = equals;
+  exports.sqrLen = exports.squaredLength = exports.len = exports.length = exports.dot = exports.mul = exports.setReal = exports.getReal = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
   var quat2 = _interopRequireWildcard(require_quat());
   var mat42 = _interopRequireWildcard(require_mat4());
@@ -3893,7 +3893,7 @@ var require_quat2 = __commonJS((exports2) => {
     return out;
   }
   var getReal = quat2.copy;
-  exports2.getReal = getReal;
+  exports.getReal = getReal;
   function getDual(out, a2) {
     out[0] = a2[4];
     out[1] = a2[5];
@@ -3902,7 +3902,7 @@ var require_quat2 = __commonJS((exports2) => {
     return out;
   }
   var setReal = quat2.copy;
-  exports2.setReal = setReal;
+  exports.setReal = setReal;
   function setDual(out, q) {
     out[4] = q[0];
     out[5] = q[1];
@@ -4047,7 +4047,7 @@ var require_quat2 = __commonJS((exports2) => {
     return out;
   }
   var mul2 = multiply;
-  exports2.mul = mul2;
+  exports.mul = mul2;
   function scale(out, a2, b) {
     out[0] = a2[0] * b;
     out[1] = a2[1] * b;
@@ -4060,7 +4060,7 @@ var require_quat2 = __commonJS((exports2) => {
     return out;
   }
   var dot = quat2.dot;
-  exports2.dot = dot;
+  exports.dot = dot;
   function lerp2(out, a2, b, t) {
     var mt = 1 - t;
     if (dot(a2, b) < 0)
@@ -4099,13 +4099,13 @@ var require_quat2 = __commonJS((exports2) => {
     return out;
   }
   var length = quat2.length;
-  exports2.length = length;
+  exports.length = length;
   var len = length;
-  exports2.len = len;
+  exports.len = len;
   var squaredLength = quat2.squaredLength;
-  exports2.squaredLength = squaredLength;
+  exports.squaredLength = squaredLength;
   var sqrLen = squaredLength;
-  exports2.sqrLen = sqrLen;
+  exports.sqrLen = sqrLen;
   function normalize(out, a2) {
     var magnitude = squaredLength(a2);
     if (magnitude > 0) {
@@ -4144,7 +4144,7 @@ var require_quat2 = __commonJS((exports2) => {
 });
 
 // node_modules/gl-matrix/cjs/vec2.js
-var require_vec2 = __commonJS((exports2) => {
+var require_vec2 = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -4159,47 +4159,47 @@ var require_vec2 = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.create = create;
-  exports2.clone = clone;
-  exports2.fromValues = fromValues;
-  exports2.copy = copy;
-  exports2.set = set;
-  exports2.add = add;
-  exports2.subtract = subtract;
-  exports2.multiply = multiply;
-  exports2.divide = divide;
-  exports2.ceil = ceil;
-  exports2.floor = floor;
-  exports2.min = min;
-  exports2.max = max;
-  exports2.round = round;
-  exports2.scale = scale;
-  exports2.scaleAndAdd = scaleAndAdd;
-  exports2.distance = distance2;
-  exports2.squaredDistance = squaredDistance;
-  exports2.length = length;
-  exports2.squaredLength = squaredLength;
-  exports2.negate = negate;
-  exports2.inverse = inverse;
-  exports2.normalize = normalize;
-  exports2.dot = dot;
-  exports2.cross = cross2;
-  exports2.lerp = lerp2;
-  exports2.random = random2;
-  exports2.transformMat2 = transformMat2;
-  exports2.transformMat2d = transformMat2d;
-  exports2.transformMat3 = transformMat3;
-  exports2.transformMat4 = transformMat4;
-  exports2.rotate = rotate;
-  exports2.angle = angle;
-  exports2.zero = zero;
-  exports2.str = str;
-  exports2.exactEquals = exactEquals;
-  exports2.equals = equals;
-  exports2.forEach = exports2.sqrLen = exports2.sqrDist = exports2.dist = exports2.div = exports2.mul = exports2.sub = exports2.len = void 0;
+  exports.create = create;
+  exports.clone = clone;
+  exports.fromValues = fromValues;
+  exports.copy = copy;
+  exports.set = set;
+  exports.add = add;
+  exports.subtract = subtract;
+  exports.multiply = multiply;
+  exports.divide = divide;
+  exports.ceil = ceil;
+  exports.floor = floor;
+  exports.min = min;
+  exports.max = max;
+  exports.round = round;
+  exports.scale = scale;
+  exports.scaleAndAdd = scaleAndAdd;
+  exports.distance = distance2;
+  exports.squaredDistance = squaredDistance;
+  exports.length = length;
+  exports.squaredLength = squaredLength;
+  exports.negate = negate;
+  exports.inverse = inverse;
+  exports.normalize = normalize;
+  exports.dot = dot;
+  exports.cross = cross2;
+  exports.lerp = lerp2;
+  exports.random = random2;
+  exports.transformMat2 = transformMat2;
+  exports.transformMat2d = transformMat2d;
+  exports.transformMat3 = transformMat3;
+  exports.transformMat4 = transformMat4;
+  exports.rotate = rotate;
+  exports.angle = angle;
+  exports.zero = zero;
+  exports.str = str;
+  exports.exactEquals = exactEquals;
+  exports.equals = equals;
+  exports.forEach = exports.sqrLen = exports.sqrDist = exports.dist = exports.div = exports.mul = exports.sub = exports.len = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
   function _getRequireWildcardCache(nodeInterop) {
     if (typeof WeakMap !== "function")
@@ -4434,19 +4434,19 @@ var require_vec2 = __commonJS((exports2) => {
     return Math.abs(a0 - b0) <= glMatrix.EPSILON * Math.max(1, Math.abs(a0), Math.abs(b0)) && Math.abs(a1 - b1) <= glMatrix.EPSILON * Math.max(1, Math.abs(a1), Math.abs(b1));
   }
   var len = length;
-  exports2.len = len;
+  exports.len = len;
   var sub = subtract;
-  exports2.sub = sub;
+  exports.sub = sub;
   var mul2 = multiply;
-  exports2.mul = mul2;
+  exports.mul = mul2;
   var div2 = divide;
-  exports2.div = div2;
+  exports.div = div2;
   var dist = distance2;
-  exports2.dist = dist;
+  exports.dist = dist;
   var sqrDist = squaredDistance;
-  exports2.sqrDist = sqrDist;
+  exports.sqrDist = sqrDist;
   var sqrLen = squaredLength;
-  exports2.sqrLen = sqrLen;
+  exports.sqrLen = sqrLen;
   var forEach = function() {
     var vec = create();
     return function(a2, stride, offset, count, fn, arg) {
@@ -4472,11 +4472,11 @@ var require_vec2 = __commonJS((exports2) => {
       return a2;
     };
   }();
-  exports2.forEach = forEach;
+  exports.forEach = forEach;
 });
 
 // node_modules/gl-matrix/cjs/index.js
-var require_cjs = __commonJS((exports2) => {
+var require_cjs = __commonJS((exports) => {
   "use strict";
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -4491,30 +4491,30 @@ var require_cjs = __commonJS((exports2) => {
     }
     return _typeof(obj);
   }
-  Object.defineProperty(exports2, "__esModule", {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports2.vec4 = exports2.vec3 = exports2.vec2 = exports2.quat2 = exports2.quat = exports2.mat4 = exports2.mat3 = exports2.mat2d = exports2.mat2 = exports2.glMatrix = void 0;
+  exports.vec4 = exports.vec3 = exports.vec2 = exports.quat2 = exports.quat = exports.mat4 = exports.mat3 = exports.mat2d = exports.mat2 = exports.glMatrix = void 0;
   var glMatrix = _interopRequireWildcard(require_common());
-  exports2.glMatrix = glMatrix;
+  exports.glMatrix = glMatrix;
   var mat2 = _interopRequireWildcard(require_mat2());
-  exports2.mat2 = mat2;
+  exports.mat2 = mat2;
   var mat2d = _interopRequireWildcard(require_mat2d());
-  exports2.mat2d = mat2d;
+  exports.mat2d = mat2d;
   var mat3 = _interopRequireWildcard(require_mat3());
-  exports2.mat3 = mat3;
+  exports.mat3 = mat3;
   var mat42 = _interopRequireWildcard(require_mat4());
-  exports2.mat4 = mat42;
+  exports.mat4 = mat42;
   var quat2 = _interopRequireWildcard(require_quat());
-  exports2.quat = quat2;
+  exports.quat = quat2;
   var quat22 = _interopRequireWildcard(require_quat2());
-  exports2.quat2 = quat22;
+  exports.quat2 = quat22;
   var vec22 = _interopRequireWildcard(require_vec2());
-  exports2.vec2 = vec22;
+  exports.vec2 = vec22;
   var vec33 = _interopRequireWildcard(require_vec3());
-  exports2.vec3 = vec33;
+  exports.vec3 = vec33;
   var vec42 = _interopRequireWildcard(require_vec4());
-  exports2.vec4 = vec42;
+  exports.vec4 = vec42;
   function _getRequireWildcardCache(nodeInterop) {
     if (typeof WeakMap !== "function")
       return null;
@@ -4553,12 +4553,6 @@ var require_cjs = __commonJS((exports2) => {
     }
     return newObj;
   }
-});
-
-// src/index.ts
-__markAsModule(exports);
-__export(exports, {
-  default: () => src_default
 });
 
 // node_modules/zogra-renderer/dist/types/utils.js
@@ -9912,4 +9906,7 @@ var RaindropFX = class {
   }
 };
 var src_default = RaindropFX;
-//# sourceMappingURL=index.js.map
+export {
+  src_default as default
+};
+//# sourceMappingURL=index.mjs.map
