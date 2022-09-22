@@ -4,10 +4,11 @@
   "description": "Rain drop effect with WebGL",
   "exports": {
     "." : {
-      "require": "./dist/index.cjs",
+      "require": "./dist/index.js",
       "import": "./dist/index.mjs"
     }
   },
+  "main": "dist/index.js",
   "scripts": {
     "build": "npm run build:ts && npm run build:node && npm run build:browser",
     "build:watch": "node ./build/build-browser.js --dev -w",

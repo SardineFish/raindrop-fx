@@ -10,7 +10,7 @@
   "author": "SardineFish",
   "license": "MIT",
   "dependencies": {
-    "raindrop-fx": "file:///../.."
+    "raindrop-fx": "file:../.."
   },
   "devDependencies": {
     "esbuild": "^0.9.5"

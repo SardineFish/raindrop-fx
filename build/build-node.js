@@ -15,7 +15,7 @@ require("esbuild").build({
     minify: !dev,
     watch: watch,
     sourcemap: true,
-    outfile: "./dist/index.cjs",
+    outfile: "./dist/index.js",
     platform: "node",
     format: "cjs",
 });
