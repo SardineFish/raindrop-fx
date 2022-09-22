@@ -2,12 +2,17 @@
   "name": "raindrop-fx",
   "version": "1.0.8",
   "description": "Rain drop effect with WebGL",
-  "main": "dist/index.js",
+  "exports": {
+    "." : {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
   "scripts": {
     "build": "npm run build:ts && npm run build:node && npm run build:browser",
     "build:watch": "node ./build/build-browser.js --dev -w",
     "build:browser": "node ./build/build-browser.js",
-    "build:node": "node ./build/build-node.js",
+    "build:node": "node ./build/build-node.js --dev",
     "build:ts": "npx tsc",
     "start": "npx esbuild --serve=0.0.0.0:8000 --servedir=./",
     "test": "npm run build && npm run test:examples",
