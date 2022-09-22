@@ -124,4 +124,4 @@ class RaindropFX
 
 }
 
-export = RaindropFX;
+export default RaindropFX;

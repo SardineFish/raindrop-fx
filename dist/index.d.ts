@@ -18,5 +18,5 @@ declare class RaindropFX {
     destroy(): void;
     private update;
 }
-export = RaindropFX;
+export default RaindropFX;
 //# sourceMappingURL=index.d.ts.map

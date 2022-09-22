@@ -1,10 +1,11 @@
 const process = require("process");
 const dev = process.argv.includes("--dev");
 const watch = process.argv.find(arg => arg === "-w" || arg === "--watch") !== undefined;
+const fs = require("fs");
 
 require("esbuild").build({
     entryPoints: [
-        "./src/index.ts"
+        "./src/browser.ts"
     ],
     bundle: true,
     loader: {
@@ -18,4 +19,8 @@ require("esbuild").build({
     outdir: "./bundle",
     publicPath: "bundle",
     globalName: "RaindropFX",
-})
+}).then((result) =>
+{
+    fs.renameSync("./bundle/browser.js", "./bundle/index.js");
+    fs.renameSync("./bundle/browser.js.map", "./bundle/index.js.map");
+});
