@@ -263,6 +263,10 @@ interface RenderingOptions
      */
     backgroundBlurSteps: number,
     /**
+     * WrapMode for background texture used during sampling raindrop refrection.
+     */
+    backgroundWrapMode: "clamp" | "repeat" | "mirror";
+    /**
      * Enable blurry mist effect
      */
     mist: boolean,

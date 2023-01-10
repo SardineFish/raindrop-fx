@@ -44,6 +44,7 @@ class RaindropFX
 
             // Rendering options
             backgroundBlurSteps: 3,
+            backgroundWrapMode: "clamp",
             mist: true,
             mistColor: [0.01, 0.01, 0.01, 1],
             mistBlurStep: 4,
