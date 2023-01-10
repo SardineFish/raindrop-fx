@@ -145,6 +145,10 @@ export interface RenderOptions
      */
     backgroundBlurSteps: number;
     /**
+     * WrapMode for background texture used during sampling raindrop refrection.
+     */
+    backgroundWrapMode: "clamp" | "repeat" | "mirror";
+    /**
      * Enable blurry mist effect
      */
     mist: boolean;
@@ -322,11 +326,22 @@ export class RaindropRenderer
             this.originalBackground.setData(this.options.background);
             this.originalBackground.updateParameters();
         }
+
         const [srcRect, dstRect] = Utils.imageResize(this.originalBackground.size, this.background.size, Utils.ImageSizing.Cover);
         this.renderer.blit(this.originalBackground, this.background, this.renderer.assets.materials.blitCopy, srcRect, dstRect);
         this.background.generateMipmap();
 
         this.blurBackground();
+
+
+        const wrapMode = {
+            "clamp": WrapMode.Clamp,
+            "mirror": WrapMode.Mirror,
+            "repeat": WrapMode.Repeat,
+        };
+        this.background.wrapMode = this.blurryBackground.wrapMode = wrapMode[this.options.backgroundWrapMode];
+        this.background.updateParameters();
+        this.blurryBackground.updateParameters();
     }
     resize()
     {
