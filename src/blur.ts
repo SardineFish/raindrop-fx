@@ -46,6 +46,12 @@ export class BlurRenderer
         if (this.steps[0].width !== texture.width || this.steps[0].height !== texture.height)
             this.steps[0].resize(texture.width, texture.height, TextureResizing.Discard);
         
+        if (iteration == 0)
+        {
+            this.renderer.blit(texture, output);
+            return;
+        }
+        
         this.downSample(texture, iteration);
 
         return this.upSample(iteration, output);

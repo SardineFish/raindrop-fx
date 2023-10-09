@@ -9,6 +9,7 @@ export interface RenderOptions {
     /**
      * Background blur steps used for background & raindrop refract image.
      * Value should be integer from 0 to log2(backgroundSize).
+     * Set to 0 will disable background blur.
      * Recommend 3 or 4
      */
     backgroundBlurSteps: number;
@@ -33,7 +34,8 @@ export interface RenderOptions {
     /**
      * Background blur steps used for mist.
      * Value should be integer from 0 to log2(backgroundSize).
-     * Recommended value = backgroundBlurSteps + 1
+     * Recommended value = backgroundBlurSteps + 1.
+     * Set to 0 will disable mist blur.
      */
     mistBlurStep: number;
     /**

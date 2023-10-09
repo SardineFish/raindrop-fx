@@ -11,7 +11,7 @@ export declare class BlurRenderer {
     mateiralBlur: MaterialBlur;
     constructor(renderer: ZograRenderer);
     init(texture: Texture): void;
-    blur(texture: Texture, iteration?: number, output?: RenderTexture): RenderTexture;
+    blur(texture: Texture, iteration?: number, output?: RenderTexture): RenderTexture | undefined;
     downSample(input: Texture, iteration: number): void;
     upSample(iteration: number, finalOutput?: RenderTexture): RenderTexture;
 }
